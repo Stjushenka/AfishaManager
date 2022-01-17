@@ -8,10 +8,10 @@ class AfishaManagerTest {
 
         @Test
         void shouldAdd() {
-            AfishaItem first = new AfishaItem(1, "Фильм1", "http://1.ru", "comedy");
-            AfishaItem second = new AfishaItem(2, "Фильм2", "http://2.ru", "action");
-            AfishaItem third = new AfishaItem(6, "Фильм3", "http://3.ru", "cartoon");
-            AfishaItem four = new AfishaItem(3, "Фильм4", "http://4.ru", "horror");
+            AfishaItem first = new AfishaItem(1, "Film1", "http://1.ru", "comedy");
+            AfishaItem second = new AfishaItem(2, "Film2", "http://2.ru", "action");
+            AfishaItem third = new AfishaItem(6, "Film3", "http://3.ru", "cartoon");
+            AfishaItem four = new AfishaItem(3, "Film4", "http://4.ru", "horror");
 
 
             manager.add(first);
