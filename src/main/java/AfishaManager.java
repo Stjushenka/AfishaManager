@@ -1,34 +1,34 @@
 public class AfishaManager {
-    private AfishaItem[] items = new AfishaItem[0];
+    private AfishaRepository repo;
     private int itemsToReturn;
 
     public AfishaManager(int itemsToReturn) {
         this.itemsToReturn = itemsToReturn;
     }
 
-    public void add(AfishaItem newItem) {
-        int length = items.length + 1;
-        AfishaItem[] tmp = new AfishaItem[length];
-
-        for (int i = 0; i < items.length; i++) {
-            tmp[i] = items[i];
-        }
-
-        tmp[tmp.length - 1] = newItem;
-        items = tmp;
+    public AfishaManager(AfishaRepository repo) {
+        this.repo = repo;
+        this.itemsToReturn = 10;
     }
 
+    public void add(AfishaItem newItem) {
+        repo.save(newItem);
+    }
+
+    public void removeById(int id) {repo.removeById(id);};
+
+
     public AfishaItem[] getLastItems() {
-        int length = itemsToReturn;
-        if (length > items.length) {
-            length = items.length;
+        int resultLength = itemsToReturn;
+        AfishaItem[] items = repo.findAll();
+        if (resultLength > items.length) {
+            resultLength = items.length;
         }
 
-        AfishaItem[] result = new AfishaItem[length];
+        AfishaItem[] result = new AfishaItem[resultLength];
 
-        for (int i = 0; i < length; i++) {
-            int index = items.length - i - 1;
-            result[i] = items[index];
+        for (int i = 0; i < resultLength; i++) {
+            result[i] = items[items.length - i - 1];
         }
         return result;
     }
