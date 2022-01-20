@@ -1,5 +1,5 @@
 public class AfishaRepository {
-    private AfishaItem[] items = new AfishaItem[10];
+    private AfishaItem[] items = new AfishaItem[0];
 
     public AfishaItem[] findAll() {
         return items;
@@ -44,7 +44,7 @@ public class AfishaRepository {
     }
 
     public void removeAll() {
-        items = new AfishaItem[10];
+        items = new AfishaItem[0];
     }
 
 
